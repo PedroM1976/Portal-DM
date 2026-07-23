@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CRM · Portal DM</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="supabase-config.js"></script>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="mark">DM</div><div><h1>CRM</h1><p>Portal DM</p></div></div>
+  <div class="header-actions"><span id="userBadge"></span><a class="back" href="../index.html">← Voltar ao Portal</a></div>
+</header>
+<main>
+  <div id="setupBanner" class="setup-banner hidden"></div>
+  <nav class="tabs" id="tabs">
+    <button data-view="dashboard" class="active">Resumo</button><button data-view="opportunities">Oportunidades</button><button data-view="clients">Clientes</button><button data-view="activities">Atividades</button><button data-view="calendar">Calendário</button><button data-view="settings" class="admin-only">Preferências CRM</button>
+  </nav>
+  <section id="view-dashboard" class="view active"></section>
+  <section id="view-opportunities" class="view"></section>
+  <section id="view-clients" class="view"></section>
+  <section id="view-activities" class="view"></section>
+  <section id="view-calendar" class="view"></section>
+  <section id="view-settings" class="view"></section>
+</main>
+<div id="modal" class="modal hidden"><div class="modal-card"><div class="modal-head"><h2 id="modalTitle"></h2><button id="modalClose">×</button></div><form id="modalForm"></form></div></div>
+<script src="app.js"></script>
+</body>
+</html>
