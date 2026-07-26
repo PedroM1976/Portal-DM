@@ -881,7 +881,8 @@ async function parseFile(file){
  DATA=rows.map(rowToData).filter(r=>r.ano||r.valor_liquido||r.valor_total);
  if(!DATA.length) throw new Error('Foram lidas '+rows.length+' linhas, mas não foram encontradas colunas de Ano ou Valor Líquido. Verifique os cabeçalhos.');
  buildMeta(); initTabs(); initSelects(); update();
- window.dmSyncExcelToCrm?.(DATA,file.name);
+ // Sincronização automática Excel→Supabase desativada para evitar limite de pedidos.
+ // window.dmSyncExcelToCrm?.(DATA,file.name);
  window.dmRefreshReportWeeks?.();
  setTimeout(()=>{ if(DATA && DATA.length){ update(); window.dmRefreshReportWeeks?.(); } },80);
  $('footer').innerHTML='&copy; Desenvolvido By Domingos &amp; Morgado';
